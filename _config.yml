@@ -1,0 +1,39 @@
+# Site settings
+title:       Programming on Science
+email:       luthaf@luthaf.fr
+author:      Luthaf
+description: "Random thoughs about programming, science and chemistry."
+baseurl:     ""
+url:         "http://luthaf.github.io"
+
+# Google analytics
+google_analytics:
+
+# Optional features
+animated:           false
+show_related_posts: false
+show_post_footers:  false
+
+# Disqus post comments
+# (leave blank to disable Disqus)
+disqus_shortname:
+
+# Social icons
+show_social_icons: true
+github_username: Luthaf
+stackoverflow_id:
+twitter_username: __luthaf__
+google_plus_id:
+linkedin_username:
+bitcoin_url:
+paypal_url:
+flattr_button:
+
+# Build settings
+markdown:     redcarpet
+redcarpet:
+  extensions: ['smart', 'tables', 'with_toc_data']
+permalink:    none
+paginate:     5
+sass:
+  compressed: true
