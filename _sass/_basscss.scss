@@ -58,42 +58,6 @@ small, .small, .f5 {
   line-height: 1.5rem;
 }
 
-@media screen and (min-width: 48em) {
-  .h1 {
-    font-size: 4rem;
-    line-height: 5rem;
-  }
-
-  .h2 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-  }
-
-  .h3 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  .p {
-    font-size: 1.25rem;
-    line-height: 2rem;
-  }
-
-  .small {
-    font-size: 1rem;
-  }
-}
-@media screen and (min-width: 64em) {
-  .h1 {
-    font-size: 6rem;
-    line-height: 8rem;
-  }
-
-  .h2 {
-    font-size: 3rem;
-    line-height: 3.5rem;
-  }
-}
 strong, .bold {
   font-weight: bold;
 }
@@ -120,7 +84,7 @@ strong, .bold {
 }
 
 .measure {
-  max-width: 48rem;
+  max-width: 60rem;
 }
 
 .measure-narrow {
