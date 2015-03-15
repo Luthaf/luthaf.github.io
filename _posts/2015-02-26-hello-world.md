@@ -2,7 +2,8 @@
 layout:     post
 title:      Hello world
 summary:    >
-   Is'nt the "hello world" program the first and mandatory program for any student ?
+   Is'nt the "hello world" program the first and mandatory program for any
+   programming student?
    Here is mine, as a starting point for this new blog.
 ---
 
