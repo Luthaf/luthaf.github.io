@@ -15,7 +15,7 @@ Relations with new technologies are like love: you will go through three phases:
 - **Disillusion**: Then you start finding that the technology also has bad sides, that
   world is not a pink warm blanket in which you can hide forever. You see things you do
   not like, and everything you try to overcome it do not seems to have an effect.
-- **Acceptation**: You start knowing what is the fit for this technology, and what is not.
+- **Acceptance**: You start knowing what is the fit for this technology, and what is not.
   You still use it for some stuff, but also rely on other to get things done.
 
 I am in the second part of my relation with the Julia language: after being enthusiastic
@@ -159,3 +159,5 @@ is the code generation introspection tools, using `@code_llvm` and `@code_native
 I will still use Julia, but not for large codebase: maintaining integrity, and forcing
 myself to respect a code organization it is just too much work that could be done by a
 compiler.
+
+EDIT: You can also see the comment thread on [Reddit](https://www.reddit.com/r/Julia/comments/3pa3km/some_criticism_of_julia/).
