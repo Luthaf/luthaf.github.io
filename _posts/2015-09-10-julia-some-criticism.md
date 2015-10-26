@@ -39,22 +39,23 @@ to maintain.
 ## Include-based code organization
 
 There is no one to one correspondence between Julia modules and file organization on the
-filesystem. One have to explicitly declare a new module `module Bar ... end`, and use the
-`include` function to include code in the current module. This have two consequences:
-    - modules are big;
-    - code organization do not follow file organization.
+filesystem. One has to explicitly declare a new module `module Bar ... end`, and use the
+`include` function to include code in the current module. This has two consequences:
+
+- modules are big;
+- code organization do not follow file organization.
 
 Modules are big because it is up to the programmer to declare new module. So most of them
 (and I include myself) will not do it and have a big
 [god-module](https://en.wikipedia.org/wiki/God_object).
 
-The fact that code organization do not follow file organization is bad because you have to
-read through all the files to learn what is going on. This add another entry barrier for
-open source collaborations where newcomers have to spend time figuring what is going on,
-and make maintenance of old code harder.
+The fact that code organization does not follow file organization is bad because you have
+to read through all the files to learn what is going on. This add another entry barrier
+for open source collaborations where newcomers have to spend time figuring what is going
+on, and make maintenance of old code harder.
 
 This is the same model as C/C++ `#include` for header files. But this model is bad, and
-add a cognitive charge on top of the programmer head. C++ folks want to add a proper
+adds a cognitive charge on top of the programmer head. C++ folks want to add a proper
 module  system since the C++11 TS discussions.
 
 ## Very bad namespacing system
@@ -65,7 +66,7 @@ module  system since the C++11 TS discussions.
 
 In Julia, when you do `using Package`, you bring all exported names from the package
 inside your current namespace. This is (for all exported symbols) the corresponding
-operation to Python `from package import *`. But what append if we already have another
+operation to Python `from package import *`. But what happens if we already have another
 variable with the same name? Let's see (julia 0.4):
 
 ```julia
@@ -111,10 +112,10 @@ and function names, and your code starts breaking randomly. Other functions get 
 the middle of a script, without having explicitly replaced them (as in Python, when we do
 monkey-patching).
 
-This is bad for maintenance. You can not refactor easily your code, or it will start
+This is bad for maintenance. You cannot easily refactor your code, or it will start
 breaking like this. As there is a late binding for variables, you will not see errors
 until the runtime of your functions. So you better have a lot of unit tests to check your
-code. But scientists notoriously use not enough unit tests.
+code. But scientists notoriously don't use enough unit tests.
 
 On the top of that, `Base` and `Core` export a lot of symbols and you do not know what is
 or not in scope.
@@ -127,18 +128,18 @@ $ julia -e "whos(Base); whos(Core)" | wc -l
 ## Too much magic
 
 I think there is too much magic in Julia code, in the sense that you do no get full
-control over what append at the system level. Coming from the C++ and Fortran side, this
+control over what happens at the system level. Coming from the C++ and Fortran side, this
 can be annoying when it comes to memory management (where do allocations take place? No
 idea without an external tool); or explicit control over SIMD. What do the `@simd` macro
 do? No one know without looking the generated LLVM IR, and we have to hope for the best
 when using it.
 
-Automagically generation of code is nice for high-level construct, but when you want to
+Automagic generation of code is nice for high-level construct, but when you want to
 squeeze the last bit of performance from the hardware it is not really the best we can do.
 
 # What can be fixed
 
-This is a list of smaller flaw, that will be fixed or are being fixed currently.
+This is a list of smaller flaws, that will be fixed or are being fixed currently.
 
 - Enormous `Base` module. There are too much things in `Base`. I mean, why is the `airy`
   function part of the standard library? This is being [worked
@@ -146,17 +147,17 @@ This is a list of smaller flaw, that will be fixed or are being fixed currently.
 - Installing native dependencies is hard, but this is true for most of the languages.
   Julia `BinDeps` package is already a good step forward;
 - No debugger. You have to use the good ol' `println` everywhere, and when you have used
-  `lldb` once, it is hard to go backward. This may change when
-  [Galium.jl](https://github.com/Keno/Gallium.jl) become usable
+  `lldb` once, it is hard to go back. This may change when
+  [Galium.jl](https://github.com/Keno/Gallium.jl) becomes usable
 
 # What is still nice and shiny
 
 For a scientific computing language, Julia is still very nice: (multi-dimmensionals)
-arrays are first-class citizen; multiple dispatch is a very nice way to implement reuse
-code; battery included for scientific needs; a nice community. Another very nice feature
+arrays are first-class citizen; multiple dispatch is a very nice way to implement code
+reuse; battery included for scientific needs; a nice community. Another very nice feature
 is the code generation introspection tools, using `@code_llvm` and `@code_native` macros.
 
-I will still use Julia, but not for large codebase: maintaining integrity, and forcing
+I will still use Julia, but not for large codebases: maintaining integrity, and forcing
 myself to respect a code organization it is just too much work that could be done by a
 compiler.
 
