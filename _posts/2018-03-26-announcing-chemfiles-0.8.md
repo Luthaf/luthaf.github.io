@@ -48,7 +48,7 @@ molecular dynamics software. [Molden] is a software for visualizing the output
 from quantum calculations, and a lot of *ab initio* software support creating
 Molden files.
 
-We also switched from Mozilla Public License to BSD license, in ordre to make it
+We also switched from Mozilla Public License to BSD license, in order to make it
 easier to use chemfiles in all projects, commercial and open source.
 
 Chemfiles also gained support for storing and retrieving arbitrary properties on
